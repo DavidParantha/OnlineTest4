@@ -1,4 +1,3 @@
-
 package org.example;
 
 class DeliveryFactory {
@@ -6,13 +5,15 @@ class DeliveryFactory {
                                           String name, double distance) {
         switch (type.toLowerCase()) {
             case "standard":
-                return new StandardDelivery(id, name, distance);
+                return new StandardDelivery(id, name,distance);
             case "express":
-                return new ExpressDelivery(id, name, distance);
+                return new ExpressDelivery(id, name,distance);
+
+                
             case "fragile":
-                return new FragileDelivery(id, name, distance);
+                return new FragileDelivery(id, name,distance);
             default:
-                throw new IllegalArgumentException("Invalid delivery type");
+     throw new IllegalArgumentException("Invalid delivery type");
         }
     }
 }
