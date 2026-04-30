@@ -6,6 +6,7 @@ import java.util.Comparator;
 class CostComparator implements Comparator<Delivery> {
     @Override
     public int compare(Delivery d1, Delivery d2) {
+
         return Double.compare(d2.calculateCost(), d1.calculateCost());
     }
 }

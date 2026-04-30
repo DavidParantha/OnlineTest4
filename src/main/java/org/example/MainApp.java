@@ -1,32 +1,16 @@
 package org.example;
+
+import java.util.*;
 public class MainApp {
-
     public static void main(String[] args) {
+        List<Delivery> list = new ArrayList<>();
 
-        DeliveryManager manager = new DeliveryManager();
+        list.add(new StandardDelivery("D101",   "John", 12.5));
+         list.add(new ExpressDelivery("D102", "Alice", 10.0));
+        list.add(new FragileDelivery("D103", "Bob", 8.0));
 
-        manager.loadFromFile("C:\\Users\\Hemant\\Desktop\\input.txt");
-
-        System.out.println("===== All Deliveries =====");
-        manager.printAll();
-
-        System.out.println("\n===== Sorted by Cost =====");
-        manager.sortByCost();
-        manager.printAll();
-
-        System.out.println("\n===== Processing Queue =====");
-        manager.processDeliveries();
-
-        System.out.println("\n===== Revenue =====");
-        System.out.println("Total Revenue: " + manager.getTotalRevenue());
-
-        System.out.println("\n===== Delivery Count =====");
-        System.out.println(manager.getDeliveryCountByType());
-
-        System.out.println("\n===== Serialization =====");
-        manager.serialize("deliveries.ser");
-
-        System.out.println("\n===== Deserialization =====");
-        manager.deserialize("deliveries.ser");
+        for (Delivery d : list) {
+            System.out.println(d);
+        }
     }
 }
